@@ -9,6 +9,7 @@ import { DestinoViaje } from '../models/destino-viaje.models';
 })
 export class DestinoViajeComponent implements OnInit {
   @Input() destino: DestinoViaje;
+  @Input('idx') posicion: number;
   @HostBinding('attr.class') cssClass = 'col-md-4';
   
   @Output() clicked: EventEmitter<DestinoViaje>;
@@ -16,6 +17,7 @@ export class DestinoViajeComponent implements OnInit {
   constructor() { 
     this.destino = new DestinoViaje('', '');
     this.clicked = new EventEmitter();
+    this.posicion = 0;
   }
 
   ngOnInit(): void {
